@@ -1,4 +1,5 @@
-import { format, ko, setDefaultOptions } from "date-fns";
+import { format, setDefaultOptions } from "date-fns";
+import { ko } from "date-fns/locale";
 
 setDefaultOptions({ locale: ko });
 

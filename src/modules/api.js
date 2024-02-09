@@ -1,18 +1,26 @@
 import axios from "axios";
-import env from "./env";
+
+import { getFormatTodayDate } from "./date.js";
 
 const api = axios.create({
-  baseURL:
-    "http://apis.data.go.kr/",
+  baseURL: "http://apis.data.go.kr/",
   headers: {
     "Content-Type": "application/json",
   },
-  timeout: 3000,
+  timeout: 10000,
 });
 
-api.interceptors.request.use((error) => {
-  console.log(error);
-  return Promise.reject(error);
-});
+api.interceptors.request.use(
+  (config) => {
+    return config;
+  },
+  (error) => {
+    console.log(
+      `[Error] ./api.js: ${getFormatTodayDate("yyyy-MM-dd HH:mm:SS")}`,
+      error
+    );
+    return Promise.reject(error);
+  }
+);
 
 export default api;
