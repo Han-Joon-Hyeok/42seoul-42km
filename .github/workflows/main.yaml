@@ -12,14 +12,14 @@ jobs:
           with:
             node-version: '20'
             cache: 'npm'
-        
+
         - name: Install dependencies
           run: npm install
-          
-        - run: npm install
-        
-    env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    GITHUB_OWNER: ${{ secrets.GITHUB_OWNER }}
-    GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
-    run: node build/main.js
+
+        - name: Run script
+          env:
+            OPEN_DATA_SERVICE_KEY: ${{ secrets.OPEN_DATA_SERVICE_KEY }}
+            OWNER: ${{ secrets.OWNER }}
+            REPO: ${{ secrets.REPO }}
+            TOKEN: ${{ secrets.TOKEN }}
+          run: node src/main.js
