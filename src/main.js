@@ -28,14 +28,14 @@ const run = async () => {
 
   logger.info("날씨 정보를 성공적으로 가져왔습니다.");
 
-  const nofiticationMessage = buildMessage({
+  const notificationMessage = buildMessage({
     skyStatus,
     precipitationType,
     lowestTempOfToday,
     highestTempOfToday,
   });
 
-  createGithubIssue(nofiticationMessage);
+  createGithubIssue(notificationMessage);
 };
 
 run();
