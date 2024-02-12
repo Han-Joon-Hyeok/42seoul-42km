@@ -16,7 +16,7 @@ api.interceptors.request.use(
   },
   (error) => {
     console.log(
-      `[Error] ./api.js: ${getFormatTodayDate("yyyy-MM-dd HH:mm:SS")}`,
+      `[Error] ./api.js: ${getFormatTodayDate("YYYY-MM-DD HH:mm:ss")}`,
       error
     );
     return Promise.reject(error);

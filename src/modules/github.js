@@ -11,8 +11,8 @@ const octokit = new Octokit({
 const OWNER = env.github.owner;
 const REPO = env.github.repo;
 
-const todayDate = getFormatTodayDate("yyyy년 MM월 dd일");
-const year = getFormatTodayDate("yyyy년");
+const todayDate = getFormatTodayDate("YYYY년 MM월 DD일");
+const year = getFormatTodayDate("YYYY년");
 const month = getFormatTodayDate("MM월");
 
 export const createGithubIssue = async (nofiticationMessage) => {

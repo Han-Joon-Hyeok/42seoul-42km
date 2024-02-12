@@ -21,7 +21,7 @@ category: 예보 항목
 */
 
 export const fetchWeather = async (pageNo, category, fcstTime) => {
-  const baseDate = getFormatTodayDate("yyyyMMdd");
+  const baseDate = getFormatTodayDate("YYYYMMDD");
 
   try {
     const response = await api.get(
