@@ -37,4 +37,7 @@ jobs:
           OWNER: ${{ secrets.OWNER }}
           REPO: ${{ secrets.REPO }}
           TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_APP_ID: ${{ secrets.GITHUB_APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets.GITHUB_APP_INSTALLATION_ID }}
+          GITHUB_APP_PRIVATE_KEY: ${{ secrets.GITHUB_APP_PRIVATE_KEY }}
         run: node src/main.js
